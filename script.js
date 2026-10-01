@@ -13,7 +13,7 @@
   const LETTER = { x: 351, y: 359, w: 884, h: 1279 }; // letter on page 2, in source px
   // candle base positions on the cake page (source px) + height
   const CANDLES = [
-    { x: 455,  y: 1320, h: 165 },
+    { x: 455,  y: 1420, h: 165 },
     { x: 700,  y: 1295, h: 180 },
     { x: 860,  y: 1255, h: 195 },
     { x: 1010, y: 1290, h: 175 },
