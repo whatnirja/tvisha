@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>happy birthday tvisha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,800;1,6..96,800&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="book" id="book">
+  <div class="page right" id="cakePage">
+    <img src="images/cake.webp" alt="a hand-drawn cake with candles under the words blow your candles">
+    <div id="candles"></div>
+  </div>
+  <div class="leaf" id="leaf">
+    <div class="face front" id="cover" role="button" tabindex="0" aria-label="Open the card">
+      <img src="images/cover.webp" alt="happy birthday baby collage cover">
+    </div>
+    <div class="face back" id="letterPage">
+      <img src="images/letter-page.webp" alt="an envelope with a letter peeking out">
+      <button class="hit letter-hit" id="letterHit" aria-label="Take out the letter"></button>
+      <button class="hit label-hit" id="labelHit" aria-label="Open your letter"></button>
+    </div>
+  </div>
+  <div class="spine-shade"></div>
+</div>
+
+<div class="bar" id="bar">
+  <span class="hint only-closed">tap the card to open it</span>
+  <button class="scrap only-open" id="backBtn" style="--r:-1.5deg">back to cover</button>
+  <span class="meter-wrap only-open only-lit" title="mic level">
+    <span>mic</span>
+    <span class="meter"><span class="fill" id="meterFill"></span><span class="mark"></span></span>
+  </span>
+  <button class="scrap dark only-open only-lit" id="holdBtn" style="--r:1.2deg">hold to blow</button>
+  <button class="scrap dark only-open only-out" id="relightBtn" style="--r:1.2deg">relight the candles</button>
+  <div class="mic-note only-open only-lit" id="micNote">blow into your mic to blow out the candles</div>
+</div>
+
+<div class="letter-layer" id="letterLayer" role="dialog" aria-label="Your letter" aria-hidden="true">
+  <img id="letterImg" src="images/letter.webp" alt="happy birthday tvisha, you have no idea how much i miss you every day. i wouldn't be the person that i am without you. you know, every day that i have to live here without you, i feel like a piece of me is missing. i was never able to put my finger on it but lately it's becoming more clear than ever. i know all your dreams will come true cause you're literally the most talented person i've met in my entire life. your passion, your enthusiasm and your energy are what make you this wonderful person that you are. i don't think you'll ever know how much you mean to me, but i know that i'll forever be grateful to have spent most of my life knowing you, and that i'll spend the rest of my life with you by my side always. you're the light of my life, and you're my sun. i'll love you always. with love, always, nirja">
+</div>
+
+<div class="wish" id="wish" aria-live="polite"></div>
+<canvas id="confetti"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="flameGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#e2452b"/>
+      <stop offset=".45" stop-color="#f59a2c"/>
+      <stop offset="1" stop-color="#ffd25a"/>
+    </linearGradient>
+    <filter id="rough" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.2"/>
+    </filter>
+    <pattern id="stripes" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <rect width="14" height="14" fill="#f7e4cc"/>
+      <rect width="6" height="14" fill="#b0233c"/>
+    </pattern>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
