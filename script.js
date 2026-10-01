@@ -4,9 +4,10 @@
   const CANDLE_STYLE = {
     wax: "#f7e4cc",      // candle base colour
     stripe: "#b0233c",   // stripe colour
-    stripes: true,       // false = plain candles
+    stripes: false,       // false = plain candles
     outline: "#b0233c",  // outline colour
-    outlineWidth: 4.5,   // outline thickness
+    outlineWidth: 7,   // outline thickness
+    sticker: false,      // true = cream cut-out border like the cake
   };
   const AR = 1545 / 2000;            // page aspect (w/h)
   const LETTER = { x: 351, y: 359, w: 884, h: 1279 }; // letter on page 2, in source px
@@ -147,7 +148,7 @@
   const candleEls = [];
   CANDLES.forEach((c, i) => {
     const el = document.createElement("div");
-    el.className = "candle";
+    el.className = "candle" + (CANDLE_STYLE.sticker ? " sticker" : "");
     el.style.left = (c.x / 1545 * 100) + "%";
     el.style.top = ((c.y - c.h) / 2000 * 100) + "%";
     el.style.height = (c.h / 2000 * 100) + "%";
@@ -216,7 +217,7 @@
   }
   function buildWish() {
     wish.innerHTML = "";
-    const lines = ["make a wish,", NAME];
+    const lines = ["make a wish"];
     let n = 0;
     lines.forEach((text) => {
       const line = document.createElement("div");
